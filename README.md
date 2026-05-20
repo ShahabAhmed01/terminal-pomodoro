@@ -21,8 +21,8 @@ A lightweight, elegant command-line interface (CLI) Pomodoro timer built with Py
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/ShahabAhmed01/simple-python-test.git
-   cd simple-python-test
+   git clone https://github.com/ShahabAhmed01/terminal-pomodoro.git
+   cd terminal-pomodoro
    ```
 
 2. **Install dependencies:**
