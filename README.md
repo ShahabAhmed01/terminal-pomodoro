@@ -1,62 +1,85 @@
-<div align="center">
-  <h1>✨ AuraTimer ✨</h1>
-  <p><i>A premium, highly aesthetic Pomodoro timer for your terminal.</i></p>
+# AuraTimer
 
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge"/>
-  <img src="https://img.shields.io/badge/Terminal-4D4D4D?style=for-the-badge&logo=windows-terminal&logoColor=white" alt="Terminal Badge"/>
-  
-</div>
+**A terminal Pomodoro timer with a Rich-powered UI** — track focus sessions, attach tasks, and review summaries without leaving the command line.
 
-<br>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Rich-CLI_UI-EE6C4D?style=flat-square" alt="Rich" />
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-4D4D4D?style=flat-square&logo=windows-terminal&logoColor=white" alt="Platform" />
+</p>
 
-**AuraTimer** elevates your focus sessions. Built with Python and [Rich](https://github.com/Textualize/rich), it provides a deeply immersive, distraction-free environment right inside your command line.
+---
 
-## 🌟 Premium Features
-- **Aesthetic UI:** Beautiful ASCII art, smooth spinner animations, and carefully curated cyan/magenta color palettes.
-- **Task Tracking:** Assign a specific task to your timer and stay locked in.
-- **Audio Alerts:** Plays a soft system chime when a session completes, so you can look away from the terminal.
-- **Session Summaries:** Automatically generates a rich data table detailing your total focus and break times when you finish your cycles.
+## Overview
 
-## 🚀 Installation
+AuraTimer runs classic Pomodoro cycles (work → short break → repeat) in the terminal. It uses [Rich](https://github.com/Textualize/rich) for layout, spinners, and session tables so sessions feel polished rather than a plain countdown script.
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/ShahabAhmed01/AuraTimer.git
-   cd AuraTimer
-   ```
+## Features
 
-2. **Install dependencies:**
-   *(It is recommended to use a virtual environment)*
-   ```bash
-   pip install -r requirements.txt
-   ```
+| Feature | Description |
+|--------|-------------|
+| **Rich terminal UI** | ASCII branding, spinners, and a cyan/magenta palette |
+| **Task labels** | Name the task you are focusing on for each run |
+| **Audio alert** | System chime when a session ends |
+| **Session summary** | Table of total focus and break time when cycles finish |
+| **Configurable** | Work duration, break length, and cycle count via CLI flags |
 
-## ⏱️ Usage
+## Requirements
 
-Run the timer with default settings (25m work, 5m break, 4 cycles):
+- Python 3.10+
+- Dependencies in `requirements.txt` (`rich`)
+
+## Installation
+
+```bash
+git clone https://github.com/ShahabAhmed01/AuraTimer.git
+cd AuraTimer
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Usage
+
+**Default session** (25 min work, 5 min break, 4 cycles):
+
 ```bash
 python auratimer.py
 ```
 
-### Track a Specific Task
+**Named task:**
+
 ```bash
-python auratimer.py --task "Building a React App"
+python auratimer.py --task "Studying DSA"
 ```
 
-### Custom Durations
-You can pass arguments to customize your workflow:
+**Custom timings:**
+
 ```bash
-python auratimer.py --work 50 --break_time 10 --cycles 3 --task "Deep Work"
+python auratimer.py --work 50 --break_time 10 --cycles 3 --task "Deep work"
 ```
 
-| Argument | Short | Description | Default |
-| :--- | :--- | :--- | :--- |
-| `--work` | `-w` | Work session duration (minutes) | `25` |
-| `--break_time` | `-b` | Short break duration (minutes) | `5` |
-| `--cycles` | `-c` | Number of cycles before a long break | `4` |
-| `--task` | `-t` | Name of the task you are focusing on | `None` |
+| Argument | Short | Default | Description |
+|----------|-------|---------|-------------|
+| `--work` | `-w` | `25` | Work session (minutes) |
+| `--break_time` | `-b` | `5` | Short break (minutes) |
+| `--cycles` | `-c` | `4` | Cycles before long break |
+| `--task` | `-t` | — | Task label for this run |
 
----
-<div align="center">
-  <i>Cultivate your focus. Protect your aura.</i>
-</div>
+## Project structure
+
+```
+AuraTimer/
+├── auratimer.py      # Entry point
+├── requirements.txt
+└── README.md
+```
+
+## Author
+
+**Shahab Ahmed** — [GitHub](https://github.com/ShahabAhmed01) · [LinkedIn](https://www.linkedin.com/in/shahabahmed01/) · [Portfolio](https://shahabahmed01.github.io)
+
+## License
+
+Open source for learning and portfolio use.
